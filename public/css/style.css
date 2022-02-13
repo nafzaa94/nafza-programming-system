@@ -1,0 +1,33 @@
+body {
+    background-image: url(../images/background2.jpg) !important;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+
+.section1 {
+    background-color: #8ec5fc;
+    margin-top: -40px;
+    padding-top: 40px;
+}
+
+.section2 {
+    background-color: #e0c3fc;
+}
+
+.section3 {
+    background-color: #8ec5fc;
+}
+
+.section4 {
+    background-color: #e0c3fc;
+}
+
+.section5 {
+    background-color: #8ec5fc;
+}
+
+a.active {
+    color: rgb(136, 22, 22) !important;
+    background-color: #ad7eda !important;
+    border-radius: 5px !important;
+}
