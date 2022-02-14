@@ -8,6 +8,7 @@ require("./bootstrap");
 
 window.Vue = require("vue").default;
 
+import Vue from "vue";
 import vuetify from "../plugins/vuetify";
 import Vuetify from "../plugins/vuetify";
 
@@ -25,6 +26,11 @@ import Vuetify from "../plugins/vuetify";
 Vue.component(
     "card-component",
     require("./components/CardComponent.vue").default
+);
+
+Vue.component(
+    "video-component",
+    require("./components/VideoComponent.vue").default
 );
 
 /**

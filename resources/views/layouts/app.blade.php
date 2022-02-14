@@ -33,7 +33,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <livewire:styles />
+    {{--
+    <livewire:styles /> --}}
 
 
 </head>
@@ -156,7 +157,8 @@
             @yield('content')
         </main>
     </div>
-    <livewire:scripts />
+    {{--
+    <livewire:scripts /> --}}
 </body>
 
 </html>

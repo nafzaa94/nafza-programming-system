@@ -26,14 +26,14 @@ class ApiController extends Controller
         return ProfileUser::all();
     }
 
-    public function ApiVideo($id)
+    public function ApiVideoID($id)
     {
-        return Video::where('Id_video', $id)->get()[0];
+        return Video::where('Id_video', $id)->get();
     }
 
-    public function ApiVideoId()
+    public function ApiVideoAll($categories)
     {
-        return Video::all();
+        return Video::where('Categories_video', $categories)->get();
     }
 
     // public function ApiPostCP()
@@ -44,12 +44,10 @@ class ApiController extends Controller
     public function Datastory()
     {
         return StoryProject::all();
-
     }
 
     public function Datapostdiscussionfyp()
     {
         return PostDiscussionFyp::orderBy('id', 'desc')->get();
     }
-
 }

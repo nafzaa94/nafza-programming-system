@@ -20,9 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('Video/{id}', [ApiController::class, 'ApiVideo']);
+Route::get('Video/detail/{id}', [ApiController::class, 'ApiVideoId']);
 
-Route::get('Video', [ApiController::class, 'ApiVideoId']);
+Route::get('Video/{categories}', [ApiController::class, 'ApiVideoAll']);
 
 Route::get('datastory', [ApiController::class, 'Datastory']);
 
