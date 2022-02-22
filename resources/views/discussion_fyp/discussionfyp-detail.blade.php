@@ -95,7 +95,7 @@
                                             <input class="reply" type="hidden" value="{{ $data->Key_reply }}">
                                         </div>
                                         <form
-                                            action="/community/discussionfyp/reply/{{ $data->Key_reply}}/{{ auth()->user()->id }}"
+                                            action="/community/discussionfyp/reply/{{ $data->Key_reply}}/{{ auth()->user()->user_id }}"
                                             method="post">
                                             @csrf
                                             <div class="p-2">
@@ -122,7 +122,7 @@
 
 
 
-                <form action="/community/discussionfyp/comments/{{ auth()->user()->id }}" method="post">
+                <form action="/community/discussionfyp/comments/{{ auth()->user()->user_id }}" method="post">
                     @csrf
                     <div class="p-2 rounded" style="background-color: #0F3B4C">
                         <div class="mb-2">

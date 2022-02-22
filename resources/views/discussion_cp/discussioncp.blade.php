@@ -14,7 +14,8 @@
             <h5 class="offcanvas-title" id="offcanvasScrollingLabel">NEW POST</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <form action="/community/discussioncp/{{ auth()->user()->id }}" method="post" enctype="multipart/form-data">
+        <form action="/community/discussioncp/{{ auth()->user()->user_id }}" method="post"
+            enctype="multipart/form-data">
             @csrf
             <div class="d-flex">
                 <div class="col-6">

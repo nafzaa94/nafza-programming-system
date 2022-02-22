@@ -44,7 +44,7 @@ class ReplyDiscussionFypController extends Controller
      */
     public function store(Request $request, User $user, CommentDiscussionFyp $commentDiscussionFyp, ReplyDiscussionFyp $replyDiscussionFyp, $key, $id)
     {
-        $datauser = $user::find($id);
+        $datauser = $user::where('user_id', $id)->get()[0];
 
         $datacomment = $commentDiscussionFyp::where('Key_reply', $key)->get()[0];
 

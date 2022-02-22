@@ -17,6 +17,7 @@ class CreateStoryProjectsTable extends Migration
             $table->id();
             $table->string('Title_Project');
             $table->string('Link_Video_Project');
+            $table->string('Video_Id');
             $table->string('Project_From');
             $table->string('Link_File_Project');
             $table->string('FeedbacK_project');

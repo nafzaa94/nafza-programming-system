@@ -22,7 +22,7 @@ class DiscussioncpController extends Controller
 
     public function store(Request $request, User $user, $id)
     {
-        $datauser = $user::find($id);
+        $datauser = $user::where('user_id', $id)->get()[0];
 
         $data1 = array(
             "Id_user" => $id,

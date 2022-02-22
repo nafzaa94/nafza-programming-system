@@ -8,6 +8,7 @@ use App\Models\ReplyDiscussionFyp;
 use App\Models\StoryProject;
 use App\Models\User;
 use App\Models\Video;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
@@ -24,6 +25,11 @@ class ApiController extends Controller
     public function ApiProfileUsers()
     {
         return ProfileUser::all();
+    }
+
+    public function ApiProfileUserDetail(Request $request)
+    {
+        return ProfileUser::where('id_user', $request->id)->first();
     }
 
     public function ApiVideoID($id)

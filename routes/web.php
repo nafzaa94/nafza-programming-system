@@ -5,6 +5,7 @@ use App\Http\Controllers\CommentDiscussionCPController;
 use App\Http\Controllers\CommentDiscussionFypController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DiscussioncpController;
+use App\Http\Controllers\GithubDataController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderProjectController;
 use App\Http\Controllers\PostDiscussionFypController;
@@ -44,6 +45,10 @@ Route::post('/storeprofile/{id}', [ProfileUserController::class, 'store'])->name
 Route::get('/profile/{id}', [ProfileUserController::class, 'index'])->name('profile');
 
 Route::get('/profileproject/{id}', [ProfileUserController::class, 'indexproject'])->name('profileproject');
+
+Route::get('/profilegithublink/{id}', [ProfileUserController::class, 'indexgithublink'])->name('profilegithublink');
+
+Route::post('/profilegithublink/set/{id}', [GithubDataController::class, 'store'])->name('profilegithublinkset');
 
 Route::post('/detailprofile/uploadimage/{id}', [ProfileUserController::class, 'uploadimageprofile']);
 

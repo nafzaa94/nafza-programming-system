@@ -121,13 +121,13 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
                                     style="background-color: #e0c3fc; width: 250px">
-                                    <li><a class="dropdown-item" href="/profile/{{auth()->user()->id}}"><i
+                                    <li><a class="dropdown-item" href="/profile/{{auth()->user()->user_id}}"><i
                                                 class="bi bi-person-circle"></i> My Profile</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item"
-                                            href="/orderproject/purchases/{{auth()->user()->id}}"><i
+                                            href="/orderproject/purchases/{{auth()->user()->user_id}}"><i
                                                 class="bi bi-bag"></i> My Purchases</a></li>
                                     <li>
                                         <hr class="dropdown-divider">

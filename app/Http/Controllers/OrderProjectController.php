@@ -59,7 +59,7 @@ class OrderProjectController extends Controller
         $datapackage = $data[0];
         $datadetail = json_decode($data[0]->package_detail);
 
-        $datauser = $user::find($id);
+        $datauser = $user::where('user_id', $id)->get()[0];
 
         $profileUser::where('id_user', $id)
             ->update(['package' => $request->namepackage]);
@@ -100,7 +100,7 @@ class OrderProjectController extends Controller
         $profileUser::where('id_user', $id)
             ->update($datafull);
 
-        $user::find($id)->update(['status_payment' => 'half payment']);
+        $user::where('user_id', $id)->update(['status_payment' => 'half payment']);
 
         return view('order_project.orderprojecthalfdone', [
             "title" => "orderprojecthalfdone",
@@ -133,7 +133,7 @@ class OrderProjectController extends Controller
         $profileUser::where('id_user', $id)
             ->update($datafull);
 
-        $user::find($id)->update(['status_payment' => 'full payment']);
+        $user::where('user_id', $id)->update(['status_payment' => 'full payment']);
 
         return view('order_project.orderprojectfulldone', [
             "title" => "orderprojectfulldone",
@@ -189,7 +189,7 @@ class OrderProjectController extends Controller
         $datapackage = $data[0];
         $datadetail = json_decode($data[0]->package_detail);
 
-        $datauser = $user::find($id);
+        $datauser = $user::where('user_id', $id)->get()[0];
 
         return view('order_project.orderprojectpurchases', [
             "title" => "orderprojectcomfirm",

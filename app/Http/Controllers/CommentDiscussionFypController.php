@@ -55,7 +55,7 @@ class CommentDiscussionFypController extends Controller
      */
     public function store(Request $request, $id, User $user, CommentDiscussionFyp $commentDiscussionFyp)
     {
-        $datauser = $user::find($id);
+        $datauser = $user::where('user_id', $id)->get()[0];
 
         $data1 = array(
             "Id_user" => $id,

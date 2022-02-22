@@ -24,9 +24,9 @@ class CreateProfileUsersTable extends Migration
             $table->string('gender');
             $table->string('statusdepartment');
             $table->string('department');
-            $table->string('projectname');
-            $table->string('presendate');
-            $table->string('typeproject');
+            $table->string('projectname')->nullable();
+            $table->string('presendate')->nullable();
+            $table->string('typeproject')->nullable();
             $table->string('objectiveproject')->nullable();
             $table->string('imageproject')->nullable();
             $table->longText('url_project_image')->nullable();

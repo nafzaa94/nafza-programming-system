@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProfileUserRequest;
 use App\Http\Requests\UpdateProfileUserRequest;
+use App\Models\GithubData;
 use App\Models\ProfileUser;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -35,6 +36,17 @@ class ProfileUserController extends Controller
 
         return view('profiles.profile_detail_project', [
             "data" => $datauser,
+        ]);
+    }
+
+    public function indexgithublink($id, ProfileUser $profileUser, GithubData $githubData)
+    {
+        $datauser = $profileUser::where('id_user', $id)->get()[0];
+        $data = $githubData::where('id_user', $id)->get()[0];
+
+        return view('profiles.profile_detail_githublink', [
+            "data" => $datauser,
+            "dataGit" => $data,
         ]);
     }
 
@@ -111,11 +123,35 @@ class ProfileUserController extends Controller
      * @param  \App\Http\Requests\StoreProfileUserRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProfileUserRequest $request, User $user, ProfileUser $profileUser, $id)
+    public function store(StoreProfileUserRequest $request, User $user, ProfileUser $profileUser, GithubData $githubData, $id)
     {
-        $profileUser::create($request->validated());
 
-        $user::find($id)->update(['status_update' => '1']);
+        $datauser = $user::find($id);
+
+        $profileUser::create([
+            'id_user' => $datauser->user_id,
+            'fullname' => $request->fullname,
+            'address' => $request->address,
+            'no_phone' => $request->no_phone,
+            'gender' => $request->gender,
+            'statusdepartment' => $request->statusdepartment,
+            'department' => $request->department,
+            'projectname' => $request->projectname,
+            'presendate' => $request->presendate,
+            'typeproject' => $request->typeproject,
+            'objectiveproject' => $request->objectiveproject,
+        ]);
+
+        $githubData::create([
+            'id_user' => $datauser->user_id,
+            'name_project' => $request->projectname,
+        ]);
+
+        $user::find($id)->update([
+            'status_update' => '1',
+            'status_github' => '1',
+
+        ]);
 
         return redirect()->back();
     }

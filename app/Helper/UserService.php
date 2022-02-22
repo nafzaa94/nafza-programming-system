@@ -74,6 +74,7 @@ class UserService
             return $validate;
         } else {
             $user = User::create([
+                'user_id' => uniqid(),
                 'name' => $this->name,
                 'email' => $this->email,
                 'password' => Hash::make($this->password)

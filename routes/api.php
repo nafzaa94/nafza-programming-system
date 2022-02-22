@@ -32,6 +32,8 @@ Route::get("comment", [ApiController::class, 'ApiComment']);
 
 Route::get('ProfileUsers', [ApiController::class, 'ApiProfileUsers']);
 
+Route::post('ProfileUser/detail', [ApiController::class, 'ApiProfileUserDetail']);
+
 Route::get('Users', [ApiController::class, 'ApiUsers']);
 
 Route::post('register', [UserController::class, 'register']);

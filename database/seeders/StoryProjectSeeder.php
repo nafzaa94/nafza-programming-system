@@ -17,6 +17,7 @@ class StoryProjectSeeder extends Seeder
         StoryProject::insert([
             "Title_Project" => "SMART BUS CARD",
             "Link_Video_Project" => "https://www.youtube.com/embed/YhvjZUoH3bM",
+            'Video_Id' => "YhvjZUoH3bM",
             "Project_From" => "POLITEKNIK UNGKU OMAR",
             "Link_File_Project" => "https://github.com/nafzaa94/smart-bus-card-puo-",
             "FeedbacK_project" => "4.5/5",
@@ -34,6 +35,7 @@ class StoryProjectSeeder extends Seeder
         StoryProject::insert([
             "Title_Project" => "SMART HEALTH MONITORING DEVICE",
             "Link_Video_Project" => "https://www.youtube.com/embed/rPS_dEDuA2Y",
+            'Video_Id' => "rPS_dEDuA2Y",
             "Project_From" => "POLITEKNIK UNGKU OMAR",
             "Link_File_Project" => "https://github.com/nafzaa94/project-puo-smart-health-monitoring-devide",
             "FeedbacK_project" => "5/5",

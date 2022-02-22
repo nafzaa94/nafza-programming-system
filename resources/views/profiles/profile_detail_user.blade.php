@@ -10,7 +10,7 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom">
             <h1 class="h2">MY PROFILE</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
-                <form action="/detailprofile/uploadimage/{{auth()->user()->id}}" method="POST"
+                <form action="/detailprofile/uploadimage/{{auth()->user()->user_id}}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="input-group">
@@ -34,16 +34,20 @@
         <div>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/profile/{{auth()->user()->id}}">Detail
+                    <a class="nav-link fw-bold active" aria-current="page"
+                        href="/profile/{{auth()->user()->user_id}}">Detail
                         Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/profileproject/{{auth()->user()->id}}">Detail Project</a>
+                    <a style="color: #000" class="nav-link fw-bold"
+                        href="/profileproject/{{auth()->user()->user_id}}">Detail
+                        Project</a>
                 </li>
                 @can('github')
                 <li class="nav-item">
-                    <a class="nav-link" href="/profilegithublink/{{auth()->user()->id}}">Link Github And Component
-                        List</a>
+                    <a style="color: #000" class="nav-link fw-bold"
+                        href="/profilegithublink/{{auth()->user()->user_id}}">Link Github
+                        And Date Class</a>
                 </li>
                 @endcan
             </ul>
@@ -65,7 +69,7 @@
                         {{auth()->user()->name}}</h5>
                 </div>
                 <div>
-                    <h5 style="font-family: 'Noto Serif', serif;">USERID : {{auth()->user()->id}}</h5>
+                    <h5 style="font-family: 'Noto Serif', serif;">USERID : {{auth()->user()->user_id}}</h5>
                 </div>
             </div>
             <div class="col-5">

@@ -12,6 +12,7 @@ class StoryProject extends Model
     protected $fillable = [
         "Title_Project",
         "Link_Video_Project",
+        "Video_Id",
         "Project_From",
         "Link_File_Project",
         "FeedbacK_project",

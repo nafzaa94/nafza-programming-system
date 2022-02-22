@@ -120,7 +120,8 @@
               <h6 class="text-center">BANK NAME : RHB BANK</h6>
               <h6 class="text-center">NO. ACCOUNT : 1-63024-0011236-3</h6>
             </div>
-            <form action="/orderproject/halfpayment/{{auth()->user()->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/orderproject/halfpayment/{{auth()->user()->user_id}}" method="POST"
+              enctype="multipart/form-data">
               @csrf
               <div class="mt-5 mb-4">
                 <label for="formFile" class="form-label">PICTURE OF PAYMENT RECEIPT</label>
@@ -172,7 +173,13 @@
           </div>
           <div class="offcanvas-body">
             <h6 class="text-center">INSERT PICTURE OF PAYMENT RECEIPT</h6>
-            <form action="/orderproject/fullpayment/{{auth()->user()->id}}" method="POST" enctype="multipart/form-data">
+            <div class="bg-danger p-2 rounded">
+              <h6 class="text-center">NAME : NIK AHMAD FAIZAL BIN ZAINAL ABIDIN</h6>
+              <h6 class="text-center">BANK NAME : RHB BANK</h6>
+              <h6 class="text-center">NO. ACCOUNT : 1-63024-0011236-3</h6>
+            </div>
+            <form action="/orderproject/fullpayment/{{auth()->user()->user_id}}" method="POST"
+              enctype="multipart/form-data">
               @csrf
               <div class="mt-5 mb-4">
                 <label for="formFile" class="form-label">PICTURE OF PAYMENT RECEIPT</label>

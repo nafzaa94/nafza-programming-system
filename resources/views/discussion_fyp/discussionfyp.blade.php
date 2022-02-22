@@ -16,7 +16,7 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <form action="/community/discussionfyp/{{ auth()->user()->id }}" method="post" enctype="multipart/form-data">
+      <form action="/community/discussionfyp/{{ auth()->user()->user_id }}" method="post" enctype="multipart/form-data">
         @csrf
         <p>Insert Image (Optional)</p>
         <div class="input-group mb-5">
