@@ -17,7 +17,9 @@ class CreateCommentDiscussionFypsTable extends Migration
             $table->id();
             $table->string('Id_user');
             $table->string('Username');
+            $table->string('Avatar');
             $table->string('Key_comment');
+            $table->string('Status_delete')->default('0');
             $table->string('Key_reply')->nullable();
             $table->string('Comment');
             $table->timestamps();

@@ -61,17 +61,25 @@
       <div class="card mb-3">
         @if ($item->Image_Post)
         <div class="d-flex justify-content-center">
-          <img src="{{ $item->Url_Post_Image }}" class="card-img-top" style="width: 500px"
+          <img src="{{ asset('storage/'.$item->Url_Post_Image) }}" class="card-img-top" style="width: 500px"
             alt="postimage-{{ $item->id }}">
         </div>
+
+        {{-- <div class="d-flex justify-content-center">
+          <img src="{{ $item->Url_Post_Image }}" class="card-img-top" style="width: 500px"
+            alt="postimage-{{ $item->id }}">
+        </div> --}}
         @endif
         <div class="card-body">
           <div class="d-flex justify-content-between">
             <h5 class="card-title">Title : {{ $item->Title_Post }}</h5>
             @if ($item->Username === auth()->user()->name)
             <div class="btn-group">
-              <button type="button" class="btn btn-sm"><i class="bi bi-person-circle"></i> {{ $item->Username
-                }}</button>
+              <button type="button" class="btn btn-sm">
+                <img class="avatar rounded-circle img-thumbnail" src="{{ $item->Avatar }}" width="30" height="30"
+                  alt="">
+                {{ $item->Username}}
+              </button>
               <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <span class="visually-hidden">Toggle Dropdown</span>
@@ -90,8 +98,11 @@
             </div>
             @else
             <div class="btn-group">
-              <button type="button" class="btn btn-sm"><i class="bi bi-person-circle"></i> {{ $item->Username
-                }}</button>
+              <button type="button" class="btn btn-sm">
+                <img class="avatar rounded-circle img-thumbnail" src="{{ $item->Avatar }}" width="30" height="30"
+                  alt="">
+                {{ $item->Username}}
+              </button>
               <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <span class="visually-hidden">Toggle Dropdown</span>

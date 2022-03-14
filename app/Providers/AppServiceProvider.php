@@ -49,5 +49,13 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('nopayment', function (User $user) {
             return $user->status_payment === "no payment";
         });
+
+        Gate::define('admin', function (User $user) {
+            return $user->status === "Admin";
+        });
+
+        Gate::define('user', function (User $user) {
+            return $user->status === "User";
+        });
     }
 }

@@ -109,7 +109,8 @@
       <div class="col-5">
         <div class="mb-3">
           @if ($data->imageproject)
-          <img src="{{ $data->url_project_image }}" class="img-thumbnail" alt="imageprofile" width="100%" height="100%">
+          <img src="{{ asset('storage/'.$data->url_project_image) }}" class="img-thumbnail" alt="imageprofile"
+            width="100%" height="100%">
           @else
           <img src="/images/contohproject.jpeg" class="img-thumbnail" alt="imageprofile" width="300px" height="300px">
           @endif

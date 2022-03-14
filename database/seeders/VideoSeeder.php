@@ -31,10 +31,10 @@ class VideoSeeder extends Seeder
         ]);
 
         Video::insert([
-            "Categories_video" => "Javascritp",
-            "Id_video" => "javascritp1",
-            "Id_Video_Taget" => "#javascritp1",
-            "Title_video" => 'WHAT IS JAVASCRITP',
+            "Categories_video" => "Javascript",
+            "Id_video" => "javascript1",
+            "Id_Video_Taget" => "#javascript1",
+            "Title_video" => 'WHAT IS JAVASCRIPT',
             "Link_video" => 'https://www.youtube.com/embed/hdI2bqOjy3c',
         ]);
 
@@ -45,6 +45,5 @@ class VideoSeeder extends Seeder
             "Title_video" => 'WHAT IS PHP',
             "Link_video" => 'https://www.youtube.com/embed/2eebptXfEvw',
         ]);
-
     }
 }

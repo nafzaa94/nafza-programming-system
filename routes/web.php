@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentDiscussionCPController;
 use App\Http\Controllers\CommentDiscussionFypController;
 use App\Http\Controllers\CommunityController;
@@ -12,7 +13,6 @@ use App\Http\Controllers\PostDiscussionFypController;
 use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\ReplyDiscussionFypController;
 use App\Http\Controllers\VideoController;
-use App\Http\Livewire\Discussioncp;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +31,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::get('/adminhome', [AdminController::class, 'index'])->name('adminhome');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

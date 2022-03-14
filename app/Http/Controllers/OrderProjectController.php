@@ -85,14 +85,16 @@ class OrderProjectController extends Controller
         );
 
         if ($request->has('imagehalfpayment')) {
-            //$data['imagehalfpayment'] = $request->file('imagehalfpayment')->store('halfpayment-image');
-
             $file = $request->file('imagehalfpayment');
-            $path = "Image-Half-Payment/" . time() . $file->getClientOriginalName();
-            \Storage::disk('s3')->put($path, file_get_contents($file));
-            $data['imagehalfpayment'] = $path;
-            $image = \Storage::disk('s3')->url($path);
-            $data1['url_imagehalfpayment'] = $image;
+            $path = $file->store('halfpayment-image');
+            $data1['url_imagehalfpayment'] = $path;
+
+            // $file = $request->file('imagehalfpayment');
+            // $path = "Image-Half-Payment/" . time() . $file->getClientOriginalName();
+            // \Storage::disk('s3')->put($path, file_get_contents($file));
+            // $data['imagehalfpayment'] = $path;
+            // $image = \Storage::disk('s3')->url($path);
+            // $data1['url_imagehalfpayment'] = $image;
         }
 
         $datafull = array_merge($data, $data1);
@@ -118,14 +120,16 @@ class OrderProjectController extends Controller
         );
 
         if ($request->has('imagefullpayment')) {
-            //$data['imagefullpayment'] = $request->file('imagefullpayment')->store('fullpayment-image');
-
             $file = $request->file('imagefullpayment');
-            $path = "Image-Full-Payment/" . time() . $file->getClientOriginalName();
-            \Storage::disk('s3')->put($path, file_get_contents($file));
-            $data['imagefullpayment'] = $path;
-            $image = \Storage::disk('s3')->url($path);
-            $data1['url_imagefullpayment'] = $image;
+            $path = $file->store('fullpayment-image');
+            $data1['url_imagefullpayment'] = $path;
+
+            // $file = $request->file('imagefullpayment');
+            // $path = "Image-Full-Payment/" . time() . $file->getClientOriginalName();
+            // \Storage::disk('s3')->put($path, file_get_contents($file));
+            // $data['imagefullpayment'] = $path;
+            // $image = \Storage::disk('s3')->url($path);
+            // $data1['url_imagefullpayment'] = $image;
         }
 
         $datafull = array_merge($data, $data1);

@@ -62,13 +62,14 @@ class ProfileUserController extends Controller
         );
 
         if ($request->has('image_profile')) {
-            //$data['image'] = $request->file('image')->store('profile-image');
             $file = $request->file('image_profile');
-            $path = "Image-Profile/" . time() . $file->getClientOriginalName();
-            \Storage::disk('s3')->put($path, file_get_contents($file));
-            $data['image_profile'] = $path;
-            $image = \Storage::disk('s3')->url($path);
-            $data1['url_profile_image'] = $image;
+            $path = $file->store('profile-image');
+            $data1['url_profile_image'] = $path;
+            // $path = "Image-Profile/" . time() . $file->getClientOriginalName();
+            // \Storage::disk('s3')->put($path, file_get_contents($file));
+            // $data['image_profile'] = $path;
+            // $image = \Storage::disk('s3')->url($path);
+            // $data1['url_profile_image'] = $image;
         }
 
         $datafull = array_merge($data, $data1);
@@ -90,13 +91,14 @@ class ProfileUserController extends Controller
         );
 
         if ($request->has('imageproject')) {
-            //$data['imageproject'] = $request->file('imageproject')->store('project-image');
             $file = $request->file('imageproject');
-            $path = "Image-Project/" . time() . $file->getClientOriginalName();
-            \Storage::disk('s3')->put($path, file_get_contents($file));
-            $data['imageproject'] = $path;
-            $image = \Storage::disk('s3')->url($path);
-            $data1['url_project_image'] = $image;
+            $path = $file->store('project-image');
+            $data1['url_project_image'] = $path;
+            // $path = "Image-Project/" . time() . $file->getClientOriginalName();
+            // \Storage::disk('s3')->put($path, file_get_contents($file));
+            // $data['imageproject'] = $path;
+            // $image = \Storage::disk('s3')->url($path);
+            // $data1['url_project_image'] = $image;
         }
 
         $datafull = array_merge($data, $data1);
@@ -144,7 +146,6 @@ class ProfileUserController extends Controller
 
         $githubData::create([
             'id_user' => $datauser->user_id,
-            'name_project' => $request->projectname,
         ]);
 
         $user::find($id)->update([

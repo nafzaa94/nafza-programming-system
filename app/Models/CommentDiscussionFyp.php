@@ -12,7 +12,9 @@ class CommentDiscussionFyp extends Model
     protected $fillable = [
         'Id_user',
         'Username',
+        'Avatar',
         'Key_comment',
+        'Status_delete',
         'Key_reply',
         'Comment',
     ];

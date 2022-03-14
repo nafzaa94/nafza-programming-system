@@ -10,7 +10,8 @@
         <div class="d-flex justify-content-around">
             @can('halfpayment')
             <div class="card" style="width: 18rem;">
-                <img src="{{ $data->url_imagehalfpayment }}" class="img-thumbnail" alt="imagehalfpayment">
+                <img src="{{ asset('storage/'.$data->url_imagehalfpayment) }}" class="img-thumbnail"
+                    alt="imagehalfpayment">
                 <div class="card-body">
                     <h5 class="card-title">{{$data->package}}</h5>
                     <p class="card-text">RECEIPT HALF PAYMENT</p>
@@ -18,7 +19,8 @@
             </div>
             @elsecan('fullpayment')
             <div class="card" style="width: 18rem;">
-                <img src="{{ $data->url_imagehalfpayment }}" class="img-thumbnail" alt="imagehalfpayment">
+                <img src="{{ asset('storage/'.$data->url_imagehalfpayment) }}" class="img-thumbnail"
+                    alt="imagehalfpayment">
                 <div class="card-body">
                     <h5 class="card-title">{{$data->package}}</h5>
                     <p class="card-text">RECEIPT HALF PAYMENT</p>
@@ -26,7 +28,8 @@
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="{{ $data->url_imagefullpayment }}" class="img-thumbnail" alt="imagefullpayment">
+                <img src="{{ asset('storage/'.$data->url_imagefullpayment) }}" class="img-thumbnail"
+                    alt="imagefullpayment">
                 <div class="card-body">
                     <h5 class="card-title">{{$data->package}}</h5>
                     <p class="card-text">RECEIPT FULL PAYMENT</p>

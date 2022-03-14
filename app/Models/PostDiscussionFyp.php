@@ -12,6 +12,7 @@ class PostDiscussionFyp extends Model
     protected $fillable = [
         'Id_user',
         'Username',
+        'Avatar',
         'Key_Post',
         'Title_Post',
         'Question_Post',

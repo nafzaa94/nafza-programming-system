@@ -16,7 +16,7 @@ class CreateGithubDataTable extends Migration
         Schema::create('github_data', function (Blueprint $table) {
             $table->id();
             $table->string('id_user');
-            $table->string('name_project');
+            $table->string('name_project')->nullable();
             $table->string('start_time_class')->nullable();
             $table->string('start_date_class')->nullable();
             $table->string('end_time_class')->nullable();

@@ -12,6 +12,7 @@ class ReplyDiscussionFyp extends Model
     protected $fillable = [
         'Id_user',
         'Username',
+        'Avatar',
         'Key_reply',
         'Reply',
     ];

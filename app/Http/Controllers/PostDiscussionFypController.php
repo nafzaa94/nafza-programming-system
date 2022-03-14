@@ -53,6 +53,7 @@ class PostDiscussionFypController extends Controller
         $data1 = array(
             "Id_user" => $id,
             "Username" => $datauser->name,
+            "Avatar" => $datauser->avatar,
             "Key_Post" => uniqid(),
             'Url_Post_Image' => "",
         );
@@ -65,14 +66,14 @@ class PostDiscussionFypController extends Controller
         ]);
 
         if ($request->has('Image_Post')) {
-            //$data['Image_Post'] = $request->file('Image_Post')->store('postdiscussionfyp-image');
-
             $file = $request->file('Image_Post');
-            $path = "Image-Discussion-Fyp/" . time() . $file->getClientOriginalName();
-            \Storage::disk('s3')->put($path, file_get_contents($file));
-            $data['Image_Post'] = $path;
-            $image = \Storage::disk('s3')->url($path);
-            $data1['Url_Post_Image'] = $image;
+            $path = $file->store('postdiscussionfyp-image');
+            $data1['Url_Post_Image'] = $path;
+            // $path = "Image-Discussion-Fyp/" . time() . $file->getClientOriginalName();
+            // \Storage::disk('s3')->put($path, file_get_contents($file));
+            // $data['Image_Post'] = $path;
+            // $image = \Storage::disk('s3')->url($path);
+            // $data1['Url_Post_Image'] = $image;
         }
 
 

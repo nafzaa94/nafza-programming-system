@@ -67,6 +67,7 @@ class RegisterController extends Controller
         return User::create([
             'user_id' => uniqid(),
             'name' => $data['name'],
+            'avatar' => 'https://ui-avatars.com/api/?name=' . $data['name'] . '&size=512&background=0D8ABC&color=fff&bold=true',
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

@@ -43,8 +43,8 @@
                     @csrf
                     <div class="form-group mb-2">
                         <label for="">Name Project</label>
-                        <input type="text" class="form-control" value="{{ $data->projectname }}" name="name_project"
-                            disabled>
+                        <input type="text" class="form-control" value="{{ $data->projectname }}" disabled>
+                        <input type="hidden" class="form-control" value="{{ $data->projectname }}" name="name_project">
                     </div>
                     <label class="fs-4">Start Class</label>
                     <div class="d-flex">

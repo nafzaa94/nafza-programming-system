@@ -10,7 +10,6 @@ window.Vue = require("vue").default;
 
 import Vue from "vue";
 import vuetify from "../plugins/vuetify";
-import Vuetify from "../plugins/vuetify";
 
 /**
  * The following block of code may be used to automatically register your
@@ -32,6 +31,17 @@ Vue.component(
     "video-component",
     require("./components/VideoComponent.vue").default
 );
+
+Vue.component(
+    "viewcommentdiscussionfyp-component",
+    require("./components/ViewCommentDiscussionFypComponent.vue").default
+);
+
+Vue.component(
+    "admindashboard-component",
+    require("./components/AdminDashboardComponent.vue").default
+);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

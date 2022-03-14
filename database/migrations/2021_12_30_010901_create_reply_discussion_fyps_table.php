@@ -17,6 +17,7 @@ class CreateReplyDiscussionFypsTable extends Migration
             $table->id();
             $table->string('Id_user');
             $table->string('Username');
+            $table->string('Avatar');
             $table->string('Key_reply');
             $table->string('Reply');
             $table->timestamps();

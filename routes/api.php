@@ -20,9 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('GetAllUser', [ApiController::class, 'GetAllUser']);
+
 Route::get('Video/detail/{id}', [ApiController::class, 'ApiVideoId']);
 
-Route::get('Video/{categories}', [ApiController::class, 'ApiVideoAll']);
+Route::post('Video/categories', [ApiController::class, 'ApiVideoAll']);
 
 Route::get('datastory', [ApiController::class, 'Datastory']);
 
@@ -34,8 +36,28 @@ Route::get('ProfileUsers', [ApiController::class, 'ApiProfileUsers']);
 
 Route::post('ProfileUser/detail', [ApiController::class, 'ApiProfileUserDetail']);
 
-Route::get('Users', [ApiController::class, 'ApiUsers']);
+Route::post('User', [ApiController::class, 'User']);
 
 Route::post('register', [UserController::class, 'register']);
 
 Route::post('login', [UserController::class, 'login']);
+
+Route::post('ProfileUser/Create', [ApiController::class, 'CreateProfileUser']);
+
+Route::post('ProjectUser/Create', [ApiController::class, 'CreateProjectUser']);
+
+Route::post('UpdatePackage', [ApiController::class, 'UpdatePackage']);
+
+Route::post('discussionfyp/comment', [ApiController::class, 'CreateCommentPostDiscussionFyp']);
+
+Route::post('commentdiscussionfyp', [ApiController::class, 'CommentPostDiscussionFyp']);
+
+Route::post('callbackdatacommentdiscussionfyp', [ApiController::class, 'CallbackDataCommentPostDiscussionFyp']);
+
+Route::post('updatecommentdiscussionfyp', [ApiController::class, 'UpdateCommentPostDiscussionFyp']);
+
+Route::post('deletecommentdiscussionfyp', [ApiController::class, 'DeleteCommentPostDiscussionFyp']);
+
+Route::post('createreplydiscussionfyp', [ApiController::class, 'CreateReplyPostDiscussionFyp']);
+
+Route::get('replydiscussionfyp', [ApiController::class, 'ReplyPostDiscussionFyp']);

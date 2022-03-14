@@ -57,8 +57,8 @@
             <div class="col-4">
                 <div class="mb-3">
                     @if ($data->image_profile)
-                    <img src="{{ $data->url_profile_image }}" class="img-thumbnail" alt="imageprofile" width="300px"
-                        height="300px">
+                    <img src="{{ asset('storage/'.$data->url_profile_image) }}" class="img-thumbnail" alt="imageprofile"
+                        width="300px" height="300px">
                     @else
                     <img src="/images/contohprofile.jpeg" class="img-thumbnail" alt="imageprofile" width="300px"
                         height="300px">

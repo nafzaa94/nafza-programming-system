@@ -17,6 +17,7 @@ class CreatePostDiscussionFypsTable extends Migration
             $table->id();
             $table->string('Id_user');
             $table->string('Username');
+            $table->string('Avatar');
             $table->string('Key_Post');
             $table->string('Title_Post');
             $table->string('Question_Post');

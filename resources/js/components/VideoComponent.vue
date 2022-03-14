@@ -99,19 +99,52 @@ export default {
         let DataJavascritp;
         let DataPhp;
 
-        await axios.get("/api/Video/Arduino").then((response) => {
+        await axios({
+            method: 'post',
+            url: '/api/Video/categories',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            data: {
+                categories: 'Arduino',
+            },
+        })
+        .then((response) => {
             DataArduino = response.data;
             //console.log(data);
             this.datavideoarduino = DataArduino;
         });
 
-        await axios.get("/api/Video/Javascritp").then((response) => {
+        await axios({
+            method: 'post',
+            url: '/api/Video/categories',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            data: {
+                categories: 'Javascript',
+            },
+        })
+        .then((response) => {
             DataJavascritp = response.data;
             //console.log(data);
             this.datavideojavascritp = DataJavascritp;
         });
 
-        await axios.get("/api/Video/PHP").then((response) => {
+        await axios({
+            method: 'post',
+            url: '/api/Video/categories',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            data: {
+                categories: 'PHP',
+            },
+        })
+        .then((response) => {
             DataPhp = response.data;
             //console.log(data);
             this.datavideophp = DataPhp;

@@ -10,9 +10,6 @@
 
     <title>NAFZASYSTEM</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
@@ -54,7 +51,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+
                     <ul class="navbar-nav me-auto">
+
                         <li class="nav-item">
                             <a class="nav-link fw-bold fs-5 {{ Request::is('home') ? 'active' : '' }}"
                                 href="{{ route('home') }}"><i class="bi bi-house-door"></i> Home</a>
@@ -63,6 +62,7 @@
                             <a class="nav-link fw-bold fs-5 {{ Request::is('about') ? 'active' : '' }}"
                                 href="{{ route('about') }}"><i class="bi bi-book"></i> About</a>
                         </li>
+
                         @auth
                         <li class="nav-item">
                             <a class="nav-link fw-bold fs-5 {{ Request::is('community') ? 'active' : '' }}"
@@ -73,6 +73,7 @@
                                 href="{{ route('video') }}"><i class="bi bi-camera-video"></i> Learn Programming With
                                 Video</a>
                         </li>
+                        @can('user')
                         @can('order')
                         @can('nopayment')
                         <li class="nav-item">
@@ -89,6 +90,7 @@
                             <a class="nav-link fw-bold fs-5"><i class="bi bi-credit-card-2-front"></i>
                                 {{auth()->user()->status_payment}}</a>
                         </li>
+                        @endcan
                         @endcan
                         @endcan
                         @endauth
@@ -119,8 +121,19 @@
                                     id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Welcome back, {{ auth()->user()->name }}
                                 </a>
+
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
                                     style="background-color: #e0c3fc; width: 250px">
+                                    @can('admin')
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('adminhome') }}"><i
+                                                class="bi bi-house-door"></i> DashBoard
+                                            Admin</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    @endcan
                                     <li><a class="dropdown-item" href="/profile/{{auth()->user()->user_id}}"><i
                                                 class="bi bi-person-circle"></i> My Profile</a></li>
                                     <li>
@@ -145,6 +158,7 @@
                                         </form>
                                     </li>
                                 </ul>
+
                             </li>
                         </div>
                         @endguest
@@ -157,8 +171,10 @@
             @yield('content')
         </main>
     </div>
-    {{--
-    <livewire:scripts /> --}}
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 </body>
 
 </html>
